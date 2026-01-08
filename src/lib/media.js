@@ -1,0 +1,58 @@
+export const products = [
+  {
+    img: "/images/product-1.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-red-200"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-2.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-cyan-400"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-3.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-purple-500"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-4.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-purple-500", "bg-red-200"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-5.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-red-200"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-6.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-cyan-400"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-7.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-gray-300", "bg-purple-500"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+  {
+    img: "/images/product-8.png",
+    name: "Uptown Reality",
+    colors: ["bg-black", "bg-purple-500", "bg-red-200"],
+    size: "M-2XL",
+    price: 15.0,
+  },
+];
