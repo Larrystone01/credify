@@ -45,6 +45,7 @@ export default function ProductShowcase() {
                   <Image
                     src={product.img}
                     fill
+                    alt="product-image"
                     className="object-cover"
                     sizes="(max-width: 760px) 100vw, 240px"
                   />
