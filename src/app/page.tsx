@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ProductShowcase from "@/components/productshowcase";
+import HowItWorks from "@/components/HowItWorks";
 
 export default function Home() {
   return (
@@ -158,7 +159,7 @@ export default function Home() {
                   backgroundSize: "20px 20px",
                 }}
               >
-                <div className="flex items-center justify-center w-[30px] h-[30px] mb-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px]">
+                <div className="flex items-center justify-center w-[30px] h-[30px] mb-3 bg-linear-to-r from-indigo-500 to-purple-500 rounded-[5px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -188,7 +189,7 @@ export default function Home() {
                   backgroundSize: "20px 20px",
                 }}
               >
-                <div className="flex items-center justify-center w-[30px] h-[30px] mb-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[5px]">
+                <div className="flex items-center justify-center w-[30px] h-[30px] mb-3 bg-linear-to-r from-indigo-500 to-purple-500 rounded-[5px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -214,6 +215,31 @@ export default function Home() {
         </div>
       </section>
       <ProductShowcase />
+      <section className="my-9">
+        <div className="section-container container px-6 mx-auto">
+          <div className="what-we-offer flex flex-col-reverse md:flex-row justify-center items-center md:justify-around gap-y-7">
+            <div className="img-cont relative h-[465px] md:w-[200px] md:h-[200px] w-full">
+              <Image
+                src={"/images/img-20.png"}
+                fill
+                sizes="(max-width:768px) 100vw, 200px"
+                className="object-cover"
+                alt="pre-footer Image"
+              />
+            </div>
+            <div className="text md:w-[50%] text-center">
+              <h3 className="text-[20px] font-bold capitalize text-center">
+                What can we offer?
+              </h3>
+              <p>
+                We connect buyers and sellers through a blockchain-backed
+                marketplace that ensures trust, speed, and security.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <HowItWorks />
     </NavandFooterWrapper>
   );
 }

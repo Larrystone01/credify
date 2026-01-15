@@ -1,7 +1,25 @@
+"use client";
+
 import { products } from "@/lib/media";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function ProductShowcase() {
+  const [viewAll, setViewAll] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 640);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const handleViewAll = () => {
+    setViewAll(!viewAll);
+  };
+
+  const productToDisplay =
+    isMobile && !viewAll ? products.slice(0, 4) : products;
   return (
     <section className="bg-gray-200">
       <div className="section-container container mx-auto px-6 py-8">
@@ -9,15 +27,18 @@ export default function ProductShowcase() {
           <h3>
             Top <span className="font-bold">Products</span>
           </h3>
-          <button className="capitalize text-blue-600 text-[16px]">
+          <button
+            className="capitalize text-blue-600 text-[16px] hover:text-blue-400 cursor-pointer"
+            onClick={handleViewAll}
+          >
             view all
           </button>
         </div>
-        <div className="product-section grid md:grid-cols-4 gap-y-3 md:gap-x-15 mb-3">
-          {products.map((product, idx) => {
+        <div className="product-section grid lg:grid-cols-4 md:grid-cols-2 gap-y-3 md:gap-x-15 mb-3">
+          {productToDisplay.map((product, idx) => {
             return (
               <div
-                className="product rounded-[15px] w-[300px] border-[0.3px] border-gray-400 py-4"
+                className="product rounded-[15px] w-[300px] border-[0.3px] border-gray-400 py-4 mx-auto"
                 key={idx}
               >
                 <div className="img-container relative w-[240px] h-[260px] mx-auto">
@@ -50,17 +71,18 @@ export default function ProductShowcase() {
             );
           })}
         </div>
-        <div className="product-section grid md:grid-cols-4 space-y-3 md:gap-x-15">
-          {products.map((product, idx) => {
+        <div className="product-section-2 grid lg:grid-cols-4 md:grid-cols-2 gap-y-3 md:gap-x-15">
+          {productToDisplay.map((product, idx) => {
             return (
               <div
-                className="product rounded-[15px] w-[300px] border-[0.3px] border-gray-400 py-4"
+                className="product rounded-[15px] w-[300px] border-[0.3px] border-gray-400 py-4 mx-auto"
                 key={idx}
               >
                 <div className="img-container relative w-[240px] h-[260px] mx-auto">
                   <Image
                     src={product.img}
                     fill
+                    alt={product.name}
                     className="object-cover"
                     sizes="(max-width: 760px) 100vw, 240px"
                   />
